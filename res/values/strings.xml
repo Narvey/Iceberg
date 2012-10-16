@@ -4,5 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_iceberg">Iceberg</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="onoff">On</string>
 
 </resources>
