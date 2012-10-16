@@ -13,13 +13,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" 
+            android:paddingLeft="70dp"
             android:src="@drawable/ic_cato" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" 
+            android:paddingLeft="70dp"
             android:src="@drawable/ic_android" />
     </LinearLayout>
 
@@ -32,14 +32,19 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_catp" 
-            android:layout_weight="1" />
-
+            android:src="@drawable/ic_catp"
+            android:paddingLeft="70dp" />
+<!-- use this instead if padding doesn't work:
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_android_orange" 
-            android:layout_weight="1" />
+            android:paddingLeft="70dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -51,13 +56,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" 
+            android:paddingLeft="70dp"
             android:src="@drawable/ic_catt" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" 
+            android:paddingLeft="70dp"
             android:src="@drawable/ic_plus_signs_sophie" />
     </LinearLayout>
 
