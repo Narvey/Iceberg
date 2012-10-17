@@ -33,7 +33,7 @@ public class Iceberg extends Activity {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
-		if(e.getActionMasked()==MotionEvent.ACTION_DOWN){
+		if(e.getActionMasked()==MotionEvent.ACTION_UP){
 			if(Settings.getIcebergs()) icebergSize=Settings.getSize();
 			else icebergSize=0;
 
@@ -41,6 +41,7 @@ public class Iceberg extends Activity {
 
 			for(int i : images){
 				ImageView img = (ImageView) findViewById(i);
+				Log.v(TAG, "x="+e.getX()+",y="+e.getY()+";i="+i+",i.x="+img.getLeft()+",i.y="+img.getTop());
 				if(Math.abs(img.getLeft()-e.getX())<30&&Math.abs(img.getTop()-e.getY())<30){
 					Log.d(TAG, "Hit target "+img.getId());
 					Toast.makeText(this, "On a target!", Toast.LENGTH_SHORT).show();
