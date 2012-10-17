@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat.Action;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 public class Iceberg extends Activity {
 	private int icebergSize;
 	private ArrayList<Integer> images;
+	public static String TAG = "Iceberg";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,27 +30,32 @@ public class Iceberg extends Activity {
 		images.add(R.id.img5);
 		images.add(R.id.img6);
 	}
-	
+
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
-		if(Settings.getIcebergs()) icebergSize=Settings.getSize();
-		String x = String.valueOf(e.getX());
-		Toast.makeText(this, "you clicked at "+x, Toast.LENGTH_SHORT).show();
-		for(int i : images){
-			ImageView img = (ImageView) findViewById(i);
-			if(img.getLeft()==e.getX()){
-				
+		if(e.getActionMasked()==MotionEvent.ACTION_DOWN){
+			if(Settings.getIcebergs()) icebergSize=Settings.getSize();
+			else icebergSize=0;
+
+			String x = String.valueOf(e.getX());
+
+			for(int i : images){
+				ImageView img = (ImageView) findViewById(i);
+				if(Math.abs(img.getLeft()-e.getX())<30&&Math.abs(img.getTop()-e.getY())<30){
+					Log.d(TAG, "Hit target "+img.getId());
+					Toast.makeText(this, "On a target!", Toast.LENGTH_SHORT).show();
+				}
 			}
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_iceberg, menu);
 		return true;
 	}
-	
+
 	public void pullUpSettings(View view){
 		Intent intent = new Intent(this, Settings.class);
 		startActivity(intent);
