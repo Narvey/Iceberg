@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.NotificationCompat.Action;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class Iceberg extends Activity {
@@ -38,13 +39,13 @@ public class Iceberg extends Activity {
 			else icebergSize=0;
 
 			String x = String.valueOf(e.getX());
-
 			for(int i : images){
 				ImageView img = (ImageView) findViewById(i);
-				Log.v(TAG, "x="+e.getX()+",y="+e.getY()+";i="+i+",i.x="+img.getLeft()+",i.y="+img.getTop());
-				if(Math.abs(img.getLeft()-e.getX())<30&&Math.abs(img.getTop()-e.getY())<30){
+				float c = 76.0f;//If Android wasn't RETARDED, I wouldn't have to do this.
+				Log.v(TAG, "x="+e.getX()+",y="+e.getY()+";i="+i+",i.x="+img.getLeft()+",i.y="+img.getTop()+c);
+				if(Math.abs(img.getLeft()-e.getX())<30&&Math.abs(img.getTop()+c-e.getY())<30){
 					Log.d(TAG, "Hit target "+img.getId());
-					Toast.makeText(this, "On a target!", Toast.LENGTH_SHORT).show();
+					img.setImageResource(WHATEVER THE DRAWABLE ID IS+1);
 				}
 			}
 		}
