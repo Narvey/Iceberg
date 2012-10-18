@@ -3,17 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ToggleButton
-        android:id="@+id/onoff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="62dp"
-        android:layout_marginTop="67dp"
-        android:onClick="switcheroo"
-        android:text="@string/onoff" />
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -24,5 +13,15 @@
         android:layout_marginLeft="58dp"
         android:text="Icebergs: "
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ToggleButton
+        android:id="@+id/onoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="41dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:onClick="switcheroo"
+        android:text="@string/onoffff" />
 
 </RelativeLayout>

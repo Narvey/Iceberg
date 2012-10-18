@@ -11,7 +11,7 @@
         android:id="@+id/lay">
 
         <ImageView
-            android:id="@+id/img4"
+            android:id="@+id/img1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -21,46 +21,46 @@
             android:src="@drawable/ic_android_orange" />
 
         <ImageView
-            android:id="@+id/img5"
+            android:id="@+id/img2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/img4"
+            android:layout_alignRight="@+id/img1"
             android:layout_marginTop="46dp"
             android:src="@drawable/ic_catt" />
-
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/img4"
-            android:layout_alignLeft="@+id/img4"
-            android:layout_marginBottom="55dp"
-            android:src="@drawable/ic_cato" />
 
         <ImageView
             android:id="@+id/img3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/img4"
+            android:layout_alignLeft="@+id/img1"
+            android:layout_marginBottom="55dp"
+            android:src="@drawable/ic_cato" />
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/img4"
+            android:layout_alignTop="@+id/img1"
             android:layout_marginLeft="58dp"
             android:src="@drawable/ic_catp" />
 
         <ImageView
-            android:id="@+id/img2"
+            android:id="@+id/img5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/img3"
-            android:layout_alignTop="@+id/img1"
+            android:layout_alignLeft="@+id/img4"
+            android:layout_alignTop="@+id/img3"
             android:src="@drawable/ic_android" />
 
         <ImageView
             android:id="@+id/img6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/img2"
-            android:layout_alignTop="@+id/img5"
+            android:layout_alignLeft="@+id/img5"
+            android:layout_alignTop="@+id/img2"
             android:src="@drawable/ic_plus_signs_sophie" />
 
     </RelativeLayout>

@@ -3,19 +3,20 @@ package com.example.iceberg;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ToggleButton;
 import android.app.Activity;
 import android.content.res.Resources;
 
 public class Settings extends Activity {
 	private static boolean icebergs=true;
-	private static int size;
+	private static int size=25;
 	
 	public void switcheroo(View view){
 		icebergs = !icebergs;
 		ToggleButton onoff = (ToggleButton) view;
 		onoff.setChecked(icebergs);
-		onoff.setText(icebergs?"On":"Off");
+		//onoff.setText(icebergs?"On":"Off");
 	}
 	
 	public static boolean getIcebergs(){
@@ -30,7 +31,8 @@ public class Settings extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        size=25;
+        ToggleButton t = (ToggleButton) findViewById(R.id.onoff);
+        t.setChecked(icebergs);
     }
 
 }
