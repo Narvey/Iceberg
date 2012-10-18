@@ -6,6 +6,5 @@
     <string name="title_activity_iceberg">Iceberg</string>
     <string name="title_activity_settings">Settings</string>
     <string name="onoffff">On</string>
-    <item name="onoff" type="ToggleButton"/>
 
 </resources>
