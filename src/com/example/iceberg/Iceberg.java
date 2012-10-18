@@ -49,11 +49,11 @@ public class Iceberg extends Activity {
 			String x = String.valueOf(e.getX());
 			for(int i : images){
 				ImageView img = (ImageView) findViewById(i);
-				float top = 76.0f+img.getTop()-icebergSize;//If Android wasn't RETARDED, I wouldn't have to do the extra 76.
-				float bottom = img.getTop()+img.getHeight()+icebergSize;
+				float top = 76f+img.getTop()-icebergSize;//If Android wasn't RETARDED, I wouldn't have to do the extra 76.
+				float bottom = 76f+img.getTop()+72f+icebergSize;
 				float left = img.getLeft()-icebergSize;
-				float right = img.getLeft()+img.getWidth()+icebergSize;
-				Log.v(TAG,top+" "+bottom+" "+left+" "+right);
+				float right = img.getLeft()+72f+icebergSize;
+				Toast.makeText(this,top+" "+bottom+" "+left+" "+right,Toast.LENGTH_LONG).show();
 				Log.v(TAG, "x="+e.getX()+",y="+e.getY()+";i="+i+",i.x="+img.getLeft()+",i.y="+(img.getTop()+76f));
 				if(e.getX()>=left && e.getX()<=right &&e.getY()>=top&&e.getY()<=bottom){
 					Log.d(TAG, "Hit target "+img.getId());
@@ -66,10 +66,9 @@ public class Iceberg extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_iceberg, menu);
 		Intent intent = new Intent(this, Settings.class);
 		startActivity(intent);
-		return true;
+		return false;
 	}
 
 	public void pullUpSettings(View view){
